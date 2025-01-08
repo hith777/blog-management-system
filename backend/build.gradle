@@ -46,9 +46,16 @@ dependencies {
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'com.h2database:h2'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// Ensure bootJar task is available
+tasks.named('bootJar') {
+    enabled = true
+    archiveClassifier = ''
 }
 

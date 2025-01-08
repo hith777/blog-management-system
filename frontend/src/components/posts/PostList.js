@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import { postService } from '../../services/postService';
+import { useAuth } from '../../context/AuthContext';
 import './Post.css';
 
 const PostList = () => {
+  const { user } = useAuth();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -35,6 +38,21 @@ const PostList = () => {
     }
   };
 
+  // Strip HTML tags and get plain text preview
+  const getPlainTextPreview = (htmlContent, maxLength = 150) => {
+    // Create a temporary div to extract text content
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = DOMPurify.sanitize(htmlContent, { ALLOWED_TAGS: [] });
+    let text = tempDiv.textContent || tempDiv.innerText || '';
+    
+    // Trim and truncate
+    text = text.trim();
+    if (text.length > maxLength) {
+      text = text.substring(0, maxLength).trim() + '...';
+    }
+    return text;
+  };
+
   if (loading) {
     return <div className="loading">Loading posts...</div>;
   }
@@ -63,7 +81,7 @@ const PostList = () => {
                 <span> • {new Date(post.createdAt).toLocaleDateString()}</span>
               </div>
               <div className="post-content-preview">
-                {post.content.substring(0, 150)}...
+                {getPlainTextPreview(post.content)}
               </div>
               {post.tags && post.tags.length > 0 && (
                 <div className="post-tags">
@@ -74,14 +92,16 @@ const PostList = () => {
                   ))}
                 </div>
               )}
-              <div className="post-actions">
-                <Link to={`/posts/${post.id}/edit`} className="btn-edit">
-                  Edit
-                </Link>
-                <button onClick={() => handleDelete(post.id)} className="btn-delete">
-                  Delete
-                </button>
-              </div>
+              {(user && (user.id === post.authorId || user.roles?.includes('ROLE_ADMIN'))) && (
+                <div className="post-actions">
+                  <Link to={`/posts/${post.id}/edit`} className="btn-edit">
+                    Edit
+                  </Link>
+                  <button onClick={() => handleDelete(post.id)} className="btn-delete">
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
