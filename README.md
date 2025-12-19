@@ -2,7 +2,7 @@
 
 A full-stack blog management application built with React and Spring Boot, featuring user authentication, post management, categories, tags, and role-based access control.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -18,7 +18,7 @@ A full-stack blog management application built with React and Spring Boot, featu
 - [Troubleshooting](#troubleshooting)
 - [Production Deployment](#production-deployment)
 
-## ✨ Features
+## Features
 
 ### Core Features
 - **User Authentication & Authorization**
@@ -51,7 +51,7 @@ A full-stack blog management application built with React and Spring Boot, featu
   - Real-time form validation
   - Error handling and user feedback
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Framework**: Spring Boot 3.2.0
@@ -73,7 +73,7 @@ A full-stack blog management application built with React and Spring Boot, featu
 - **Testing**: Jest, React Testing Library
 - **Build Tool**: Create React App (react-scripts 5.0.1)
 
-## 🏗 Architecture
+## Architecture
 
 ### Backend Architecture
 ```
@@ -136,7 +136,7 @@ Client Request
 └─────────────────────────────────────────┘
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 new_project/
@@ -224,7 +224,7 @@ new_project/
     └── package.json
 ```
 
-## 📦 Prerequisites
+## Prerequisites
 
 ### Backend Requirements
 - **Java 17** or higher ([Download](https://adoptium.net/))
@@ -238,7 +238,7 @@ new_project/
 - PostgreSQL server running and accessible
 - Database user with appropriate permissions
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 
@@ -313,7 +313,7 @@ npm start
 
 The frontend will start on `http://localhost:3000` and automatically open in your browser.
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -369,7 +369,7 @@ Backend configuration is in `backend/src/main/resources/application.properties`:
 - **JPA**: Auto-update schema, SQL logging enabled
 - **CORS**: Configured for `http://localhost:3000`
 
-## 🏃 Running the Application
+## Running the Application
 
 ### Development Mode
 
@@ -613,7 +613,7 @@ npm test -- --coverage
 - Component tests (Login, PostList)
 - Context tests (AuthContext)
 
-## 🔒 Security Features
+## Security Features
 
 ### Authentication
 - **JWT (JSON Web Tokens)** for stateless authentication
@@ -637,7 +637,7 @@ npm test -- --coverage
 - Protected endpoints: All other `/api/*` endpoints require authentication
 - JWT token sent in `Authorization: Bearer {token}` header
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Backend Issues
 
@@ -739,7 +739,7 @@ CREATE DATABASE blogdb;
 # Restart backend (will auto-create schema)
 ```
 
-## 🚢 Production Deployment
+## Production Deployment
 
 ### Backend Deployment
 
@@ -795,18 +795,5 @@ CREATE DATABASE blogdb;
 - [ ] Test all endpoints
 - [ ] Load testing
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Support
-
-For issues and questions, please open an issue on the repository.
 
 ---
-
-**Built with ❤️ using React and Spring Boot**
