@@ -21,6 +21,7 @@ class UserRepositoryTest {
     private User testUser;
 
     @BeforeEach
+    @SuppressWarnings("null")
     void setUp() {
         testUser = new User();
         testUser.setUsername("testuser");

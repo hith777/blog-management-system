@@ -41,6 +41,7 @@ class AuthControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testRegisterSuccess() throws Exception {
         String requestBody = objectMapper.writeValueAsString(new RegisterRequest(
                 "newuser", "newuser@example.com", "password123"
@@ -57,6 +58,7 @@ class AuthControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testRegisterDuplicateUsername() throws Exception {
         // Create existing user
         User existing = new User();
@@ -77,6 +79,7 @@ class AuthControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testLoginSuccess() throws Exception {
         // Create user
         User user = new User();
@@ -99,6 +102,7 @@ class AuthControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testLoginInvalidCredentials() throws Exception {
         // Create user
         User user = new User();

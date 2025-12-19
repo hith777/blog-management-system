@@ -65,6 +65,7 @@ class PostControllerTest {
     private String authToken;
 
     @BeforeEach
+    @SuppressWarnings("null")
     void setUp() {
         postRepository.deleteAll();
         tagRepository.deleteAll();
@@ -131,6 +132,7 @@ class PostControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testCreatePost() throws Exception {
         String requestBody = objectMapper.writeValueAsString(new PostRequest(
                 "New Post", "New Content", category.getId(), Set.of(tag1.getId())
@@ -147,6 +149,7 @@ class PostControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testCreatePostUnauthorized() throws Exception {
         String requestBody = objectMapper.writeValueAsString(new PostRequest(
                 "New Post", "New Content", null, null
@@ -159,6 +162,7 @@ class PostControllerTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdatePost() throws Exception {
         Post post = new Post();
         post.setTitle("Original Title");

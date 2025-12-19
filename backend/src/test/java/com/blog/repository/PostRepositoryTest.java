@@ -38,6 +38,7 @@ class PostRepositoryTest {
     private Tag tag2;
 
     @BeforeEach
+    @SuppressWarnings("null")
     void setUp() {
         author = new User();
         author.setUsername("author");
@@ -153,6 +154,7 @@ class PostRepositoryTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeletePost() {
         Post post = new Post();
         post.setTitle("Test Post");

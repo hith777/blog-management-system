@@ -47,6 +47,7 @@ class TagServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testGetTagById() {
         Tag tag = new Tag();
         tag.setName("Java");
@@ -86,6 +87,7 @@ class TagServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdateTag() {
         Tag tag = new Tag();
         tag.setName("Java");
@@ -100,6 +102,7 @@ class TagServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdateTagDuplicateName() {
         Tag tag1 = new Tag();
         tag1.setName("Java");
@@ -117,6 +120,7 @@ class TagServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeleteTag() {
         Tag tag = new Tag();
         tag.setName("Java");

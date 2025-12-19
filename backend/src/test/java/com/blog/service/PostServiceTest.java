@@ -15,7 +15,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,6 +54,7 @@ class PostServiceTest {
     private UserDetails adminDetails;
 
     @BeforeEach
+    @SuppressWarnings("null")
     void setUp() {
         postRepository.deleteAll();
         tagRepository.deleteAll();
@@ -111,6 +111,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testGetPostById() {
         Post post = new Post();
         post.setTitle("Test Post");
@@ -178,6 +179,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdatePostByAuthor() {
         Post post = new Post();
         post.setTitle("Original Title");
@@ -200,6 +202,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdatePostByAdmin() {
         Post post = new Post();
         post.setTitle("Original Title");
@@ -217,6 +220,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdatePostUnauthorized() {
         Post post = new Post();
         post.setTitle("Original Title");
@@ -240,6 +244,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdatePostClearTags() {
         Post post = new Post();
         post.setTitle("Test Post");
@@ -259,6 +264,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeletePostByAuthor() {
         Post post = new Post();
         post.setTitle("Test Post");
@@ -272,6 +278,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeletePostByAdmin() {
         Post post = new Post();
         post.setTitle("Test Post");
@@ -285,6 +292,7 @@ class PostServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeletePostUnauthorized() {
         Post post = new Post();
         post.setTitle("Test Post");

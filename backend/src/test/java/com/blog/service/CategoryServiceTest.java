@@ -61,6 +61,7 @@ class CategoryServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testGetCategoryById() {
         Category category = new Category();
         category.setName("Tech");
@@ -106,6 +107,7 @@ class CategoryServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdateCategory() {
         Category category = new Category();
         category.setName("Tech");
@@ -123,6 +125,7 @@ class CategoryServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testUpdateCategoryDuplicateName() {
         Category cat1 = new Category();
         cat1.setName("Tech");
@@ -143,6 +146,7 @@ class CategoryServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeleteCategory() {
         Category category = new Category();
         category.setName("Tech");
@@ -155,6 +159,7 @@ class CategoryServiceTest {
     }
 
     @Test
+    @SuppressWarnings("null")
     void testDeleteCategoryWithPosts() {
         User author = new User();
         author.setUsername("author");
